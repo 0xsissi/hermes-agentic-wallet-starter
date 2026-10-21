@@ -1,0 +1,13 @@
+.runtime/
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+.agents/
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+.DS_Store
+Thumbs.db

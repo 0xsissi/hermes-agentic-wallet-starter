@@ -1,0 +1,9 @@
+{
+  "name": "hermes-agentic-wallet-starter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=24.5.0" },
+  "scripts": { "test": "node --test tests/*.test.mjs", "plan": "node starter.mjs install --dry-run" }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>币安 Agentic Wallet 长文 · 复制到 X 专用</title><style>
+body { margin: 0; background: #fff; color: #171b1e;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; }
+.toolbar { max-width: 720px; margin: 24px auto 0; padding: 20px 28px; background: #f3f6fa; border-radius: 14px; }
+.toolbar p { margin: 0 0 14px; line-height: 1.6; font-size: 15px; }
+button { cursor: pointer; border: 0; border-radius: 9px; padding: 12px 18px;
+  font: inherit; font-size: 15px; background: #1769dd; color: white; margin: 0 8px 10px 0; }
+button.secondary { background: #e2e8f0; color: #171b1e; }
+#status { display: block; min-height: 24px; font-size: 14px; color: #354555; }
+#post { max-width: 720px; margin: 32px auto 80px; padding: 0 28px;
+  font-size: 18px; line-height: 1.72; overflow-wrap: anywhere; }
+strong { font-weight: 700; }
+@media (max-width: 600px) { #post { margin-top: 26px; font-size: 17px; padding: 0 20px; }
+  .toolbar { margin: 12px; padding: 18px; } }
+</style></head><body><div class="toolbar"><p><strong>复制到 X：保留加粗与空行</strong><br>点下方按钮复制正文，再回到 X 替换旧正文并粘贴。内容与原长版一致。</p><button id="copy-rich" type="button">复制正文（含加粗与空行）</button><button id="copy-plain" class="secondary" type="button">复制纯文本</button><span id="status" role="status" aria-live="polite">复制后请检查 X 编辑器中的段落。</span></div><div id="post" role="article"><strong>让爱马仕接上币安钱包：用免费模型额度，搭一个能查余额、看报价的 AI 助手</strong><br><br>最近在研究币安 Agentic Wallet，我把适合小白的入门路线整理成了教程，还配了一套 <strong>MIT 开源安装脚本</strong>。<br><br>不用先买 AI 订阅，先从 WorkBuddy AI 的免费额度开始。想自己操作就照着下面做；不想敲命令，也可以把源码包交给能操作电脑的 AI 帮你安装。<br><br>这套组合是：<br><strong>WorkBuddy AI → Magpie → Hermes（爱马仕）→ 币安 Agentic Wallet</strong><br><br>先把名字说成人话：<br>• WorkBuddy AI：提供模型，相当于大脑。<br>• Magpie：把模型接给本机助手，相当于接线。<br>• Hermes：理解你的话、调用技能，负责干活。<br>• Agentic Wallet：在你授权的权限内处理钱包签名。<br><br><strong>为什么这次用爱马仕？</strong><br>因为目标是长期放在电脑里用的个人助手。它支持技能和记忆，接好以后，可以继续用中文查地址、查余额、准备交易。钱包私钥不需要交给 AI。<br><br>下面以国际 WorkBuddy AI 为主，国内版放在后面。<br><br><strong>① 先装环境</strong><br><br>准备电脑、本人 WorkBuddy AI 账号，以及支持 Agentic Wallet 的币安账号和 App。先从 nodejs.org 安装 Node.js 24 LTS。<br><br>拿到配套源码包后解压，在解压后的项目文件夹打开终端，输入：<br><br>node starter.mjs install<br><br>脚本会安装所需环境、Magpie、Hermes 和币安官方钱包技能。第一次需要下载依赖，等它跑完。<br><br><strong>② 登录模型，保持 Magpie 开着</strong><br><br>按顺序输入：<br><br>node starter.mjs workbuddy-login<br>node starter.mjs magpie-ui<br><br>在浏览器登录本人的国际 WorkBuddy AI 账号，查看额度。<strong>Magpie 页面和这个终端保持运行。</strong><br><br><strong>③ 选模型，启动爱马仕</strong><br><br>再开一个终端，仍然进入同一个项目文件夹，输入：<br><br>node starter.mjs models<br><br>从列表中复制一个本人账号可用的 workbuddy-ai/… 完整模型 ID。<strong>下面的「真实模型ID」要替换，别原样照抄：</strong><br><br>node starter.mjs set-model workbuddy-ai/真实模型ID<br>node starter.mjs agent<br><br>启动后先发一句：“请用中文回复：模型连接正常。”<br><br><strong>能正常回复，再接钱包。</strong> 如果模型列表为空，先解决登录或账号可用性，别急着往钱包里充钱。<br><br><strong>④ 扫码接钱包，先做一次查询</strong><br><br>把这段话发给爱马仕：<br><br>“先读取 binance-agentic-wallet 技能和认证说明，再用当前项目的 node starter.mjs wallet-login 连接币安 Agentic Wallet。完整展示配对码和官方链接，等我在币安 App 核对确认；保持登录验证运行，直到显示 CONNECTED。之后只查 BSC 钱包地址和余额，不买币、不转账。”<br><br>在币安 App 核对并确认。<strong>电脑显示 CONNECTED，才算连接完成。</strong><br><br>以后可以直接说：<br>“查一下我在 BSC 上的 BNB 和 USDT 余额。”<br>“拿 0.0001 BNB 换 USDT 的报价，列出预计到账、费用和滑点，只报价。”<br><br>真要买币时，把链、完整合约、金额说清楚，<strong>先看风险、报价和费用，再明确确认执行。</strong> 提交后还要查交易结果。<br><br><strong>不想自己操作？</strong> 把源码包交给能使用本机终端的 AI，再发这句话：<br><br>“请按项目里的 docs/AI-INSTALL-PROMPT.md 帮我安装。先检查环境，再安装、登录模型、测试回复。需要扫码时由我操作；最后只查钱包地址和余额，不做交易。”<br><br>普通网页豆包如果没有电脑操作权限，只能教你操作；有本机执行权限的 AI 才能代装。登录和扫码也需要你本人完成。<br><br><strong>关于「免费」，有三点要说清楚：</strong><br><br>• 国际 WorkBuddy AI 当前 Free 套餐为每月 100 积分，新用户另有 250 积分、14 天有效；以本人页面为准，不是无限调用。<br>• 国内版登录可用 node starter.mjs workbuddy-login --region cn。国内免费额度与 CLI 权益不同，不能把国际版的可用性直接套过去。<br>• <strong>免费说的是模型额度。买币本金、链上 Gas、可能产生的钱包交易服务费另算。</strong><br><br>这是一套社区接入方案，并非几家厂商联合推出的产品。Windows 下的安装环境、技能加载和脚本检查已经验证；WorkBuddy 账号登录到 Hermes 实际调用，仍需用你自己的账号测试。<br><br>完整教程、排错说明、安装提示词和 MIT 源码包都整理好了。<br><br><strong>需要的评论区回复「钱包」领取。</strong> 建议先收藏，第一次照着做，后面就可以直接用中文跟钱包助手交流了。<br><br>后续继续分享我实际研究的 AI × 链上工具。<br><br>资料口径：2026-10-21。国际额度说明：<br>https://www.codebuddy.ai/docs/zh/ide/Account/Subscription</div><script id="post-text" type="application/json">"让爱马仕接上币安钱包：用免费模型额度，搭一个能查余额、看报价的 AI 助手\n\n最近在研究币安 Agentic Wallet，我把适合小白的入门路线整理成了教程，还配了一套 MIT 开源安装脚本。\n\n不用先买 AI 订阅，先从 WorkBuddy AI 的免费额度开始。想自己操作就照着下面做；不想敲命令，也可以把源码包交给能操作电脑的 AI 帮你安装。\n\n这套组合是：\nWorkBuddy AI → Magpie → Hermes（爱马仕）→ 币安 Agentic Wallet\n\n先把名字说成人话：\n• WorkBuddy AI：提供模型，相当于大脑。\n• Magpie：把模型接给本机助手，相当于接线。\n• Hermes：理解你的话、调用技能，负责干活。\n• Agentic Wallet：在你授权的权限内处理钱包签名。\n\n为什么这次用爱马仕？\n因为目标是长期放在电脑里用的个人助手。它支持技能和记忆，接好以后，可以继续用中文查地址、查余额、准备交易。钱包私钥不需要交给 AI。\n\n下面以国际 WorkBuddy AI 为主，国内版放在后面。\n\n① 先装环境\n\n准备电脑、本人 WorkBuddy AI 账号，以及支持 Agentic Wallet 的币安账号和 App。先从 nodejs.org 安装 Node.js 24 LTS。\n\n拿到配套源码包后解压，在解压后的项目文件夹打开终端，输入：\n\nnode starter.mjs install\n\n脚本会安装所需环境、Magpie、Hermes 和币安官方钱包技能。第一次需要下载依赖，等它跑完。\n\n② 登录模型，保持 Magpie 开着\n\n按顺序输入：\n\nnode starter.mjs workbuddy-login\nnode starter.mjs magpie-ui\n\n在浏览器登录本人的国际 WorkBuddy AI 账号，查看额度。Magpie 页面和这个终端保持运行。\n\n③ 选模型，启动爱马仕\n\n再开一个终端，仍然进入同一个项目文件夹，输入：\n\nnode starter.mjs models\n\n从列表中复制一个本人账号可用的 workbuddy-ai/… 完整模型 ID。下面的「真实模型ID」要替换，别原样照抄：\n\nnode starter.mjs set-model workbuddy-ai/真实模型ID\nnode starter.mjs agent\n\n启动后先发一句：“请用中文回复：模型连接正常。”\n\n能正常回复，再接钱包。 如果模型列表为空，先解决登录或账号可用性，别急着往钱包里充钱。\n\n④ 扫码接钱包，先做一次查询\n\n把这段话发给爱马仕：\n\n“先读取 binance-agentic-wallet 技能和认证说明，再用当前项目的 node starter.mjs wallet-login 连接币安 Agentic Wallet。完整展示配对码和官方链接，等我在币安 App 核对确认；保持登录验证运行，直到显示 CONNECTED。之后只查 BSC 钱包地址和余额，不买币、不转账。”\n\n在币安 App 核对并确认。电脑显示 CONNECTED，才算连接完成。\n\n以后可以直接说：\n“查一下我在 BSC 上的 BNB 和 USDT 余额。”\n“拿 0.0001 BNB 换 USDT 的报价，列出预计到账、费用和滑点，只报价。”\n\n真要买币时，把链、完整合约、金额说清楚，先看风险、报价和费用，再明确确认执行。 提交后还要查交易结果。\n\n不想自己操作？ 把源码包交给能使用本机终端的 AI，再发这句话：\n\n“请按项目里的 docs/AI-INSTALL-PROMPT.md 帮我安装。先检查环境，再安装、登录模型、测试回复。需要扫码时由我操作；最后只查钱包地址和余额，不做交易。”\n\n普通网页豆包如果没有电脑操作权限，只能教你操作；有本机执行权限的 AI 才能代装。登录和扫码也需要你本人完成。\n\n关于「免费」，有三点要说清楚：\n\n• 国际 WorkBuddy AI 当前 Free 套餐为每月 100 积分，新用户另有 250 积分、14 天有效；以本人页面为准，不是无限调用。\n• 国内版登录可用 node starter.mjs workbuddy-login --region cn。国内免费额度与 CLI 权益不同，不能把国际版的可用性直接套过去。\n• 免费说的是模型额度。买币本金、链上 Gas、可能产生的钱包交易服务费另算。\n\n这是一套社区接入方案，并非几家厂商联合推出的产品。Windows 下的安装环境、技能加载和脚本检查已经验证；WorkBuddy 账号登录到 Hermes 实际调用，仍需用你自己的账号测试。\n\n完整教程、排错说明、安装提示词和 MIT 源码包都整理好了。\n\n需要的评论区回复「钱包」领取。 建议先收藏，第一次照着做，后面就可以直接用中文跟钱包助手交流了。\n\n后续继续分享我实际研究的 AI × 链上工具。\n\n资料口径：2026-10-21。国际额度说明：\nhttps://www.codebuddy.ai/docs/zh/ide/Account/Subscription\n"</script><script>
+const post = document.getElementById('post');
+const plainText = JSON.parse(document.getElementById('post-text').textContent);
+const status = document.getElementById('status');
+
+function copyWithEvent(rich) {
+  const selection = window.getSelection();
+  const saved = [];
+  for (let i = 0; i < selection.rangeCount; i++) saved.push(selection.getRangeAt(i).cloneRange());
+  const range = document.createRange();
+  range.selectNodeContents(post);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  let handled = false;
+  const onCopy = (event) => {
+    if (!event.clipboardData) return;
+    event.preventDefault();
+    event.clipboardData.setData('text/plain', plainText);
+    if (rich) event.clipboardData.setData('text/html', '<div>' + post.innerHTML + '</div>');
+    handled = true;
+  };
+  document.addEventListener('copy', onCopy);
+  try {
+    return document.execCommand('copy') && handled;
+  } finally {
+    document.removeEventListener('copy', onCopy);
+    selection.removeAllRanges();
+    for (const previous of saved) selection.addRange(previous);
+  }
+}
+
+async function copyPost(rich) {
+  status.textContent = '正在复制…';
+  try {
+    if (rich && navigator.clipboard && window.ClipboardItem) {
+      const item = new ClipboardItem({
+        'text/html': new Blob(['<div>' + post.innerHTML + '</div>'], {type: 'text/html'}),
+        'text/plain': new Blob([plainText], {type: 'text/plain'})
+      });
+      await navigator.clipboard.write([item]);
+    } else if (!rich && navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(plainText);
+    } else if (!copyWithEvent(rich)) {
+      throw new Error('Clipboard unavailable');
+    }
+  } catch (error) {
+    try {
+      if (!copyWithEvent(rich)) throw error;
+    } catch (_) {
+      status.textContent = '浏览器未允许复制。请改用配套 TXT 文件，或选中下方正文复制。';
+      return;
+    }
+  }
+  status.textContent = rich
+    ? '已复制正文、加粗和空行。请回 X 替换旧正文，按 Ctrl+V 粘贴并检查段落。'
+    : '已复制纯文本与空行。请回 X 替换旧正文后粘贴；重点加粗需在编辑器里设置。';
+}
+
+document.getElementById('copy-rich').addEventListener('click', () => copyPost(true));
+document.getElementById('copy-plain').addEventListener('click', () => copyPost(false));
+</script></body></html>

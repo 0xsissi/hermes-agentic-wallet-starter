@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-10-21",
+  "magpie": {
+    "version": "v0.1.1307",
+    "assets": {
+      "magpie-cli-darwin-amd64": {
+        "url": "https://github.com/yetone/magpie-releases/releases/download/v0.1.1307/magpie-cli-darwin-amd64",
+        "sha256": "353e9da88a0fc40654623584b41dae38b8581ab8a18d910868b8c23ed4f3a2f6"
+      },
+      "magpie-cli-darwin-arm64": {
+        "url": "https://github.com/yetone/magpie-releases/releases/download/v0.1.1307/magpie-cli-darwin-arm64",
+        "sha256": "c4a67b9e4aadf7f1012418d42d32e67ab7a48a96db695310dd9104fd6d66ee73"
+      },
+      "magpie-cli-linux-amd64": {
+        "url": "https://github.com/yetone/magpie-releases/releases/download/v0.1.1307/magpie-cli-linux-amd64",
+        "sha256": "5248801e40fb70db6df29ee32b3fb788cdd411c619ac5aa3bad234df928f5104"
+      },
+      "magpie-cli-linux-arm64": {
+        "url": "https://github.com/yetone/magpie-releases/releases/download/v0.1.1307/magpie-cli-linux-arm64",
+        "sha256": "507a8c5786b9e20d7cd7407e68de9bdef7073ac28bf46390c1e88760c11e0bce"
+      },
+      "magpie-cli-windows-amd64.exe": {
+        "url": "https://github.com/yetone/magpie-releases/releases/download/v0.1.1307/magpie-cli-windows-amd64.exe",
+        "sha256": "320e97f6b18d45c6457898790b2916dfe542d484996611bf704b07cd9c2a5430"
+      },
+      "magpie-cli-windows-arm64.exe": {
+        "url": "https://github.com/yetone/magpie-releases/releases/download/v0.1.1307/magpie-cli-windows-arm64.exe",
+        "sha256": "c2fd49694e3f789c45cc87b7fd399bdf7e8d2588aa5f0bf8e0ecd9cc5a00bbc2"
+      }
+    }
+  },
+  "npm": {
+    "@binance/agentic-wallet": "1.11.0"
+  },
+  "workbuddyPlugin": "@magpie-community/opencode-workbuddy-auth@0.1.28",
+  "skills": {
+    "repo": "binance/binance-skills-hub",
+    "commit": "43cc38ef5ca4ec3bd62b7d82ac35f1a8e5003166",
+    "names": [
+      "binance-agentic-wallet",
+      "query-token-audit"
+    ]
+  },
+  "hermesInstallers": {
+    "ps1": {
+      "url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/cf4f3a7396814ffcaef69d9af09f7cfdade3ddbe/scripts/install.ps1",
+      "sha256": "3d428ce54dea5fe26f8f52e40b2a49876d3cb95c49760e8350d6458046519479"
+    },
+    "sh": {
+      "url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/cf4f3a7396814ffcaef69d9af09f7cfdade3ddbe/scripts/install.sh",
+      "sha256": "20f44240ebada354a468104a6a6724d037afcb8883d4d09ddeb4815622c52d8b"
+    }
+  }
+}
